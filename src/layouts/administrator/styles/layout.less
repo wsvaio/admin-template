@@ -1,0 +1,176 @@
+.administrator > aside {
+  width: 210px;
+}
+
+html.dark .administrator {
+  & > aside {
+    border-right: 1px solid var(--border-color);
+  }
+
+  .logo-left.logo {
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .collapse-bottom {
+    border-top: 1px solid var(--border-color);
+  }
+
+  .menu-left-mix {
+    border-right: 1px solid var(--border-color);
+  }
+}
+
+html.left-mix .administrator {
+  & > aside {
+    width: 80px;
+    transition: width 0.3s;
+    border-right: none;
+
+    .logo-left {
+      justify-content: center;
+
+      h3 {
+        display: none;
+      }
+    }
+
+    &.collapse {
+      width: 48px;
+
+      .menu-nav-item {
+        justify-content: center;
+
+        .text {
+          display: none;
+        }
+
+        .arrow {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+html.left .administrator {
+  & > aside {
+    transition: width 0.3s;
+
+    &.collapse {
+      width: 48px;
+    }
+
+    .logo-left {
+      &.collapse {
+        justify-content: center;
+
+        h3 {
+          display: none;
+        }
+      }
+    }
+
+    .menu-left {
+      &.collapse {
+        .menu-nav-item {
+          justify-content: center;
+
+          .text {
+            display: none;
+          }
+
+          .arrow {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+html.top-mix .administrator {
+  & > aside {
+    transition: width 0.3s;
+
+    &.hide {
+      width: 0 !important;
+    }
+
+    &.collapse {
+      width: 48px;
+
+      .logo-left {
+        &.collapse {
+          justify-content: center;
+
+          h3 {
+            display: none;
+          }
+        }
+      }
+
+      .menu-left {
+        .menu-nav-item {
+          justify-content: center;
+
+          .text {
+            display: none;
+          }
+
+          .arrow {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  & > section {
+    header {
+      .logo-top.logo:not(.hide) {
+        display: none;
+      }
+
+      // .logo-top.logo {
+      //   width: 210px;
+      // }
+    }
+
+    // &.collapse {
+    //   .logo-top.logo {
+    //     width: 48px;
+    //   }
+    // }
+  }
+}
+
+html.mobile .administrator {
+  & > aside {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    transition: transform 0.3s;
+
+    &.collapse {
+      transform: translateX(-100%);
+    }
+  }
+
+  & > section {
+    transition: filter 0.3s;
+
+    &:not(.collapse) {
+      filter: brightness(50%);
+    }
+
+    & > header {
+      .logo-top {
+        /* stylelint-disable-next-line no-descending-specificity */
+        h3 {
+          display: none;
+        }
+      }
+    }
+  }
+}

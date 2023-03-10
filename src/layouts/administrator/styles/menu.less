@@ -1,0 +1,91 @@
+:root {
+  --menu-bg-color: var(--aside-bg-color, var(--bg-color));
+  --menu-text-color: var(--el-text-color-primary);
+  --menu-text-active-color: var(--el-color-primary);
+  // --menu-bg-sub-color: var(--el-bg-color);
+  --menu-bg-active-color: var(--el-bg-color);
+}
+
+html:not(.dark) {
+  --menu-bg-color: var(--aside-bg-color, #001529);
+  --menu-text-color: rgb(var(--theme-color) / 70%);
+  --menu-text-active-color: rgb(var(--theme-color) / 100%);
+  --menu-bg-sub-color: rgb(var(--theme-color) / 10%);
+  --menu-bg-collaspe-color: rgb(var(--theme-color-invert) / 50%);
+  --menu-bg-active-color: var(--el-color-primary);
+}
+
+.menu-nav-item {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  overflow: hidden;
+  background: var(--menu-bg-color);
+  color: var(--menu-text-color);
+  white-space: nowrap;
+
+  .icon {
+    flex: none;
+    font-size: 16px;
+  }
+
+  .text {
+    flex: 1;
+    width: 100%;
+    margin-left: 6px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .arrow {
+    width: 14px;
+    margin-left: auto;
+  }
+
+  &:hover {
+    color: var(--menu-text-active-color);
+    cursor: pointer;
+  }
+
+  &.sub {
+    background-color: var(--menu-bg-sub-color);
+  }
+
+  &:not(.title).active {
+    background: var(--menu-bg-active-color, var(--el-color-primary));
+    color: var(--menu-text-active-color);
+  }
+
+  &.title.active {
+    color: var(--menu-text-active-color);
+  }
+}
+
+.vpopup-popuper.nav-popup,
+.vpopup-popuper.nav-popup-list {
+  border-radius: 2px;
+  box-shadow: var(--el-box-shadow);
+}
+
+.left .vpopup-popuper.nav-popup,
+.left-mix .vpopup-popuper.nav-popup-list {
+  background-color: var(--menu-bg-color);
+}
+
+.top .vpopup-popuper.nav-popup,
+.top-mix .vpopup-popuper.nav-popup {
+  background-color: var(--el-bg-color);
+}
+
+.menu-left-mix-trigger .menu-nav-item,
+.collapse .menu-nav-item.nav-popup.vertical.top-level {
+  justify-content: center;
+  border: 3px solid transparent;
+  border-top: 0;
+  border-bottom: 0;
+
+  &.active {
+    border-left-color: var(--el-color-primary);
+    background: var(--menu-bg-collaspe-color);
+  }
+}

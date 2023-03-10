@@ -1,0 +1,27 @@
+:root {
+  --theme-color: 255 255 255;
+  --theme-color-invert: 0 0 0;
+  --bg-color: #fff;
+  --main-bg-color: #eff1f6;
+  --border-color: var(--el-border-color);
+  --primary-color: #0960bd;
+  --gap: 16px;
+}
+
+html.dark {
+  --theme-color: 0 0 0;
+  --theme-color-invert: 255 255 255;
+  --bg-color: rgb(33 33 33);
+  --main-bg-color: #000;
+  --title-bg-color: rgb(48 48 48);
+}
+
+html {
+  --el-color-primary: var(--primary-color, #0960bd) !important;
+  // --font-size: calc(100vw / 19.2);
+  --font-size: 16px;
+}
+
+html.mobile {
+  --gap: 16px;
+}
